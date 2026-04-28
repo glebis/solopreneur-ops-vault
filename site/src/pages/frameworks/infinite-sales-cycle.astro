@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sidenote from '../../components/Sidenote.astro';
+import Sparkline from '../../components/Sparkline.astro';
+---
+
+<Base title="Infinite Sales Cycle">
+  <article>
+    <h1>Infinite Sales Cycle</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      Sales never stops. Every output feeds the next input.
+    </p>
+
+    <h2>The Model</h2>
+
+    <p>
+      Most solopreneurs treat sales as a campaign: launch, push, rest, repeat. This creates
+      boom-bust cycles and morning confusion.
+      <Sidenote id="boom-bust">
+        The campaign model works for products with a launch date. Education products —
+        cohorts, communities, coaching — need continuous visibility. The funnel is always on.
+      </Sidenote>
+    </p>
+
+    <p>The infinite cycle treats every action as both delivery and lead generation:</p>
+
+    <pre><code>Create → Publish → Engage → Convert → Deliver → Document → Create
+  ↑                                                           |
+  └───────────────────────────────────────────────────────────┘</code></pre>
+
+    <h2>Each Step Feeds the Next</h2>
+
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Action</th><th>Sales Output</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Create</strong></td><td>Build a skill, write a post</td><td>Portfolio piece</td></tr>
+        <tr><td><strong>Publish</strong></td><td>Share on LinkedIn/YouTube</td><td>Visibility</td></tr>
+        <tr><td><strong>Engage</strong></td><td>Reply to comments, DMs</td><td>Relationship</td></tr>
+        <tr><td><strong>Convert</strong></td><td>Offer help, invite to lab</td><td>Lead → Sale</td></tr>
+        <tr><td><strong>Deliver</strong></td><td>Run the lab/community</td><td>Case study material</td></tr>
+        <tr><td><strong>Document</strong></td><td>Record results, testimonials</td><td>Social proof</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Revenue Targets — Berlin 2026</h2>
+
+    <p>For a solo educator in Berlin, baseline sustainability:</p>
+
+    <table>
+      <thead>
+        <tr><th>Item</th><th>Monthly</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Living costs Berlin</td>
+          <td>~€2,500</td>
+          <td><Sparkline data={[2200, 2300, 2350, 2400, 2450, 2500]} type="line" color="#555" /></td>
+        </tr>
+        <tr>
+          <td>Tools &amp; subscriptions</td>
+          <td>~€300</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tax reserve (30%)</td>
+          <td>~€1,200</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Minimum revenue</strong></td>
+          <td><strong>~€4,000</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Comfortable target</strong></td>
+          <td><strong>~€7,000</strong></td>
+          <td><Sparkline data={[3, 3.5, 4, 5, 5.5, 6, 7]} type="area" color="#059669" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      This means: 1 cohort (6–8 people × €500–800) per quarter + community revenue.
+      <Sidenote id="pricing">
+        Western market pricing for comparable cohort-based AI training ranges
+        €800–2,500. Current Russian-market pricing of €500–800 has room to grow
+        for English-language cohorts.
+      </Sidenote>
+    </p>
+
+    <h2>Anti-Pattern</h2>
+
+    <p>
+      Building 50 skills (Create) without promoting them (Publish/Engage).
+      The daily dashboard always includes items from at least 2 different cycle stages
+      to prevent this trap.
+    </p>
+  </article>
+</Base>

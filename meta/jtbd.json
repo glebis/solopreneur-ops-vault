@@ -1,0 +1,64 @@
+{
+  "name": "solopreneur-ops-vault",
+  "hook": "Morning dashboard that turns solopreneur chaos into 5 clear daily actions driving visibility and sales for English-language educational products.",
+  "jtbd": {
+    "situation": "When I wake up and don't know what to do to move toward sales goals for my English-language educational products",
+    "motivation": "I want to see max 5 clear actions — one doable in 5 min, one already done by an agent",
+    "outcome": "So I can consistently take daily actions that lead to visibility and sales in a continuous cycle"
+  },
+  "problem": {
+    "what_hurts": "50 products built, no sales pipeline. Morning starts with Telegram/YouTube/coding instead of revenue-generating actions.",
+    "cost_today": "Lost sales opportunities, underfilled English-language cohorts, no compounding visibility on Western market."
+  },
+  "needs": {
+    "functional": [
+      "Max 5 items on dashboard",
+      "One task completable in 5-10 minutes",
+      "Agent pre-research visible with results",
+      "Auto-cleanup to prevent task accumulation",
+      "Full-screen morning view"
+    ],
+    "emotional": [
+      "Clarity — know exactly what to do",
+      "Leverage — agents did heavy lifting, I skim cream",
+      "Momentum — daily visible progress"
+    ]
+  },
+  "switch_forces": {
+    "push": "Wake up without clarity. 50 products exist but no systematic path to sales. Feeling of lost optionality.",
+    "pull": "Full-screen dashboard, 5 items max. One already completed by agent. Agents looked where I wouldn't. I collect results.",
+    "habit": "Telegram, YouTube, coding new skills fills the void instead of sales actions.",
+    "anxiety": "Too many tasks accumulate → demotivation → stop opening → abandonment. Need auto-cleanup mechanism."
+  },
+  "outputs": [
+    "Obsidian vault with daily actionable dashboard",
+    "Agent-generated research and lead intel",
+    "Public Astro website as portfolio/funnel",
+    "Reusable templates for interviews and context-building"
+  ],
+  "before_after": {
+    "before": "Morning: open Telegram, scroll, code another skill. No sales actions. Guilt accumulates.",
+    "after": "Morning: open vault full-screen. See 5 items. Do one in 5 min. Agent already did another. Ship something visible."
+  },
+  "evidence": {
+    "source": "interview",
+    "quotes": [
+      "Бесит, что я встаю с утра и не могу точно понять, что мне сделать",
+      "Dashboard. На нем максимум пять айтемов. Один из них я могу сделать за 5-10 минут",
+      "Чувствую, что вижу, как агенты за меня посмотрели туда, куда я бы не посмотрел",
+      "Там будет слишком много задач. Это будет демотивировать. Я перестану его открывать"
+    ],
+    "weaknesses": ["measurable_outcome: directional only, no specific numbers yet"]
+  },
+  "guardrails": [
+    "Never more than 5 items on dashboard",
+    "No task accumulation — auto-archive after 3 days",
+    "No complex onboarding — open and go"
+  ],
+  "open_questions": [
+    "Specific sales target numbers (leads/week, conversions/month)",
+    "Which visibility channels to prioritize (LinkedIn, YouTube, site)",
+    "Community pricing model"
+  ],
+  "version": 1
+}

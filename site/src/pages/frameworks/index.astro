@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+---
+
+<Base title="Frameworks">
+  <article>
+    <h1>Frameworks</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      Thinking tools for daily decisions
+    </p>
+
+    <div class="card-grid full-width">
+      <Card title="Behavioral Activation" status="active" tags={["psychology", "core"]} href="/frameworks/behavioral-activation">
+        <p>The operating model: action produces motivation. From CBT research, applied to solopreneur operations.</p>
+      </Card>
+
+      <Card title="Infinite Sales Cycle" status="active" tags={["sales"]} href="/frameworks/infinite-sales-cycle">
+        <p>Create → Publish → Engage → Convert → Deliver → Document → Create. The cycle never stops.</p>
+      </Card>
+
+      <Card title="5-Minute Wins" status="active" tags={["daily-ops"]} href="/frameworks/five-minute-wins">
+        <p>Catalog of quick actions by category: visibility, engagement, content, sales.</p>
+      </Card>
+
+      <Card title="Content Leverage" status="active" tags={["content"]} href="/frameworks/content-leverage">
+        <p>1 lab session → 7+ content pieces. Never create for one platform only.</p>
+      </Card>
+    </div>
+  </article>
+</Base>

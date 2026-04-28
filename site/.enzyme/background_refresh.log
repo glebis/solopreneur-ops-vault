@@ -1,0 +1,1 @@
+[2m2026-04-28T18:02:21.646478Z[0m [33m WARN[0m [2menzyme_core::llm::client[0m[2m:[0m OPENAI_API_KEY is set but OPENAI_BASE_URL is not — ignoring partial env config

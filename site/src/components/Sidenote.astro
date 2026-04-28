@@ -1,0 +1,11 @@
+---
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+
+<label class="sidenote-number" for={`sn-${id}`}></label>
+<span class="sidenote" id={`sn-${id}`}>
+  <slot />
+</span>

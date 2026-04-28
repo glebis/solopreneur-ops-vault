@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import Sparkline from '../components/Sparkline.astro';
+import Card from '../components/Card.astro';
+
+const taskModules = import.meta.glob('../content/tasks/*.md', { eager: true, query: '?raw', import: 'default' });
+
+interface Task {
+  title: string;
+  slug: string;
+  status: string;
+  stage: string;
+  effort: string;
+  priority: string;
+  source: string;
+  created: string;
+  due?: string;
+  completed?: string;
+  body: string;
+}
+
+function parseFrontmatter(raw: string) {
+  const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { data: {} as Record<string, string>, content: raw };
+  const data: Record<string, string> = {};
+  match[1].split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    if (key && rest.length) data[key.trim()] = rest.join(':').trim();
+  });
+  return { data, content: match[2] };
+}
+
+const tasks: Task[] = Object.entries(taskModules).map(([filepath, raw]) => {
+  const { data, content } = parseFrontmatter(raw as string);
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  const slug = filepath.split('/').pop()?.replace('.md', '') || '';
+  return {
+    title: titleMatch ? titleMatch[1] : slug,
+    slug,
+    status: data.status || 'open',
+    stage: data.stage || 'unknown',
+    effort: data.effort || '?',
+    priority: data.priority || 'medium',
+    source: data.source || 'manual',
+    created: data.created || '',
+    due: data.due,
+    completed: data.completed,
+    body: content.replace(/^#\s+.+$/m, '').trim(),
+  };
+});
+
+const openTasks = tasks
+  .filter(t => t.status === 'open')
+  .sort((a, b) => {
+    const p: Record<string, number> = { high: 0, medium: 1, low: 2 };
+    return (p[a.priority] ?? 1) - (p[b.priority] ?? 1);
+  })
+  .slice(0, 5);
+
+const doneTasks = tasks.filter(t => t.status === 'done');
+const agentTasks = tasks.filter(t => t.source === 'agent');
+
+const stages = [...new Set(tasks.map(t => t.stage))];
+const stageData = stages.map(s => ({
+  stage: s,
+  total: tasks.filter(t => t.stage === s).length,
+  done: tasks.filter(t => t.stage === s && t.status === 'done').length,
+}));
+
+const priorityColors: Record<string, string> = { high: '#dc2626', medium: '#d97706', low: '#059669' };
+---
+
+<Base title="Dashboard">
+  <article>
+    <h1>Dashboard</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      Max 5 items. One takes 5 minutes. One is already done.
+    </p>
+
+    <h2>Quick Stats</h2>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Value</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open tasks</td>
+          <td><strong>{openTasks.length}</strong></td>
+          <td><Sparkline data={[openTasks.length, 5]} type="bar" color="#2563eb" width={40} /></td>
+        </tr>
+        <tr>
+          <td>Completed</td>
+          <td><strong>{doneTasks.length}</strong></td>
+          <td><Sparkline data={[doneTasks.length, 5]} type="bar" color="#059669" width={40} /></td>
+        </tr>
+        <tr>
+          <td>Agent-sourced</td>
+          <td><strong>{agentTasks.length}</strong></td>
+          <td><Sparkline data={[agentTasks.length, tasks.length]} type="bar" color="#d97706" width={40} /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Today's Focus</h2>
+
+    <div class="card-grid full-width">
+      {openTasks.map(task => (
+        <Card
+          title={task.title}
+          status={task.source === 'agent' ? 'active' : 'pending'}
+          tags={[task.stage, task.effort, task.source === 'agent' ? '🤖 agent' : '👤 manual']}
+        >
+          <p>{task.body.split('\n').find(l => l.startsWith('**Action:'))?.replace('**Action:**', '').replace('**Action:** ', '') || task.body.split('\n')[0]}</p>
+          <p style="font-size: 0.8rem; color: var(--color-text-muted);">
+            Priority: <span style={`color: ${priorityColors[task.priority] || '#555'}`}>{task.priority}</span>
+            {task.due && <> &middot; Due: {task.due}</>}
+          </p>
+        </Card>
+      ))}
+    </div>
+
+    {doneTasks.length > 0 && (
+      <>
+        <h2>Completed</h2>
+        <div class="card-grid full-width">
+          {doneTasks.map(task => (
+            <Card
+              title={task.title}
+              status="active"
+              tags={[task.stage, 'done', task.source === 'agent' ? '🤖 agent' : '👤 manual']}
+            >
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">
+                Completed: {task.completed || 'recently'}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </>
+    )}
+
+    <h2>By Sales Cycle Stage</h2>
+
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>Total</th><th>Done</th><th>Progress</th></tr>
+      </thead>
+      <tbody>
+        {stageData.map(s => (
+          <tr>
+            <td><strong>{s.stage}</strong></td>
+            <td>{s.total}</td>
+            <td>{s.done}</td>
+            <td><Sparkline data={[s.done, s.total - s.done]} type="bar" color="#2563eb" width={60} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2>How It Works</h2>
+
+    <p>
+      Tasks live as markdown files with YAML frontmatter in the vault's <code>tasks/</code> folder.
+      In Obsidian, Dataview queries render them dynamically. On this site, the same files
+      are parsed at build time. One source of truth, two interfaces.
+    </p>
+
+    <pre><code>{`---
+type: task
+status: open        # open | done | archived
+stage: engage       # create | publish | engage | convert | deliver | review
+effort: 5min        # 5min | 15min | 30min | 1hr
+priority: high      # high | medium | low
+source: agent       # agent | manual
+created: 2026-04-28
+due: 2026-04-30
+---`}</code></pre>
+
+    <p>
+      The <a href="/agents">Dashboard Curator agent</a> runs at 06:00 CET, archives stale items,
+      and ensures the focus list never exceeds 5 items across at least 2 sales cycle stages.
+    </p>
+  </article>
+</Base>

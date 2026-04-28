@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sidenote from '../../components/Sidenote.astro';
+import Sparkline from '../../components/Sparkline.astro';
+---
+
+<Base title="Behavioral Activation">
+  <article>
+    <h1>Behavioral Activation</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      Action first. Motivation follows. Not the other way around.
+    </p>
+
+    <h2>The Principle</h2>
+
+    <p>
+      Behavioral Activation (BA) comes from CBT research on depression: people who act
+      <em>despite</em> not feeling motivated break the cycle faster than those who wait
+      for motivation to arrive.
+      <Sidenote id="research">
+        Martell, Dimidjian, &amp; Herman-Dunn (2010). <em>Behavioral Activation for Depression.</em>
+        Kanter et al. (2010) extended the framework to non-clinical productivity contexts.
+      </Sidenote>
+    </p>
+
+    <p>
+      For solopreneurs, this translates directly:
+    </p>
+
+    <pre><code>Traditional:  Motivation → Action → Result
+BA approach:  Small Action → Result → Motivation → Bigger Action</code></pre>
+
+    <h2>Applied to Daily Operations</h2>
+
+    <h3>The 5-Minute Rule</h3>
+
+    <p>
+      If a task takes under 5 minutes, do it now. No list, no planning, no overthinking.
+      The dashboard always shows at least one item completable in this window.
+    </p>
+
+    <h3>Activity Scheduling</h3>
+
+    <p>
+      BA uses <em>scheduled activities</em>, not infinite task lists.
+      The dashboard shows exactly 5 items because:
+    </p>
+
+    <ul style="width: var(--content-width); margin-bottom: 1.2rem; padding-left: 1.5rem;">
+      <li>5 is scannable in under 10 seconds</li>
+      <li>At least one is completable in 5 minutes (guaranteed quick win)</li>
+      <li>At least one is already done by an agent (progress without effort)</li>
+      <li>Remaining items are pre-prioritized — no decision fatigue</li>
+    </ul>
+
+    <h3>Avoidance Mapping</h3>
+
+    <p>Common avoidance patterns for this project:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Avoidance Behavior</th>
+          <th>What I'm Actually Avoiding</th>
+          <th>BA Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reading Telegram/news</td>
+          <td>Making a sales-related action</td>
+          <td>Do the 5-min item first, <em>then</em> Telegram</td>
+        </tr>
+        <tr>
+          <td>Coding a new skill</td>
+          <td>Promoting existing skills</td>
+          <td>Publish before building</td>
+        </tr>
+        <tr>
+          <td>Researching tools</td>
+          <td>Contacting a lead</td>
+          <td>Send one message, then research</td>
+        </tr>
+        <tr>
+          <td>Perfecting content</td>
+          <td>Shipping imperfect content</td>
+          <td>Ship today, improve tomorrow</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Reward Tracking</h3>
+
+    <p>
+      BA emphasizes tracking <em>actions taken</em>, not outcomes.
+      <Sidenote id="tracking">
+        Tracking actions (inputs) rather than results (outputs) reduces anxiety and
+        maintains motivation even during slow sales periods. The streak itself becomes
+        the reward.
+      </Sidenote>
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>This Week</th><th>Trend</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Days with visibility action</td>
+          <td>5/7</td>
+          <td><Sparkline data={[3, 4, 5, 4, 6, 5, 5]} type="bar" color="#059669" /></td>
+        </tr>
+        <tr>
+          <td>Agent tasks reviewed</td>
+          <td>12</td>
+          <td><Sparkline data={[5, 8, 7, 10, 9, 11, 12]} type="area" color="#2563eb" /></td>
+        </tr>
+        <tr>
+          <td>Content pieces shipped</td>
+          <td>3</td>
+          <td><Sparkline data={[1, 1, 2, 2, 1, 3, 3]} type="line" color="#d97706" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Connection to JTBD</h2>
+
+    <p>
+      The project's own job statement maps directly to BA:
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Switch Force</th><th>BA Interpretation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Push</strong> (morning confusion)</td><td>The avoidance cycle</td></tr>
+        <tr><td><strong>Pull</strong> (clear dashboard)</td><td>Scheduled activation</td></tr>
+        <tr><td><strong>Habit</strong> (Telegram/coding)</td><td>Avoidance behaviors</td></tr>
+        <tr><td><strong>Anxiety</strong> (task pile-up)</td><td>Solved by auto-archive + hard cap of 5</td></tr>
+      </tbody>
+    </table>
+  </article>
+</Base>

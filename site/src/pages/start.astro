@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Get Started">
+  <article>
+    <h1>Get Started</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      10 minutes to build the context that makes agents useful
+    </p>
+
+    <h2>The Context Interview</h2>
+
+    <p>
+      Before agents can help you, they need to understand you. This interview takes
+      10 minutes and produces a <code>context.md</code> file — the foundation for all
+      agent interactions.
+    </p>
+
+    <p>Answer naturally. Voice dictation works great. Raw honesty beats polished answers.</p>
+
+    <h3>Part 1: Who You Are (2 min)</h3>
+    <ul style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li><strong>What do you do for work?</strong> Role, industry, company size</li>
+      <li><strong>What tools do you use daily?</strong> Software, platforms, devices</li>
+      <li><strong>What languages do you work in?</strong> Speaking, writing, coding</li>
+    </ul>
+
+    <h3>Part 2: What Hurts (3 min)</h3>
+    <ul style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li><strong>What task do you dread most?</strong></li>
+      <li><strong>When did you last lose significant time on something avoidable?</strong> Tell the story.</li>
+      <li><strong>What information do you wish you had at your fingertips?</strong></li>
+    </ul>
+
+    <h3>Part 3: What Success Looks Like (2 min)</h3>
+    <ul style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li><strong>If you could delegate one thing to an agent tomorrow, what?</strong></li>
+      <li><strong>What does a great work morning look like?</strong> First 30 minutes.</li>
+      <li><strong>What would change with a reliable assistant who knows your context?</strong></li>
+    </ul>
+
+    <h3>Part 4: Boundaries (1 min)</h3>
+    <ul style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li><strong>What should an agent NEVER do for you?</strong></li>
+      <li><strong>What information would you NOT share with AI?</strong></li>
+    </ul>
+
+    <h3>Part 5: Quick-Fire (2 min)</h3>
+    <ul style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li>Timezone</li>
+      <li>Preferred output language</li>
+      <li>Communication style (formal / casual / direct)</li>
+      <li>Info format preference (bullets / narrative / visual)</li>
+      <li>Biggest professional goal, next 6 months</li>
+    </ul>
+
+    <h2>What Happens Next</h2>
+
+    <p>Run this through Claude Code:</p>
+
+    <pre><code>claude "Read my context interview and generate a context.md
+that an agent can use to understand me. Be specific."</code></pre>
+
+    <p>
+      The output <code>context.md</code> becomes the foundation.
+      Every agent reads it. Every suggestion is personalized.
+      Disproportionate value from 10 minutes of honesty.
+    </p>
+  </article>
+</Base>

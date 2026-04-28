@@ -1,0 +1,8 @@
+node_modules/
+site/dist/
+site/.vercel/
+.DS_Store
+.obsidian/plugins/
+.obsidian/workspace.json
+.enzyme*
+.enzyme-embeddings/

@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+import Sparkline from '../../components/Sparkline.astro';
+---
+
+<Base title="Agent Operations">
+  <article>
+    <h1>Agent Operations</h1>
+    <p class="subtitle" style="font-size: 1.2rem; font-style: italic; color: var(--color-text-muted);">
+      What agents do while you sleep
+    </p>
+
+    <h2>Active Agents</h2>
+
+    <table>
+      <thead>
+        <tr><th>Agent</th><th>Job</th><th>Frequency</th><th>Activity</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>LinkedIn Scout</strong></td>
+          <td>Find relevant conversations</td>
+          <td>Daily</td>
+          <td><Sparkline data={[3, 2, 4, 3, 5, 3, 4]} type="bar" color="#059669" /></td>
+        </tr>
+        <tr>
+          <td><strong>Lead Researcher</strong></td>
+          <td>Research new connections</td>
+          <td>On-connect</td>
+          <td><Sparkline data={[1, 0, 2, 1, 1, 3, 1]} type="bar" color="#2563eb" /></td>
+        </tr>
+        <tr>
+          <td><strong>Market Scanner</strong></td>
+          <td>Competitive landscape</td>
+          <td>Weekly</td>
+          <td><Sparkline data={[1, 0, 0, 0, 0, 0, 1]} type="bar" color="#d97706" /></td>
+        </tr>
+        <tr>
+          <td><strong>Dashboard Curator</strong></td>
+          <td>Curate daily 5 items</td>
+          <td>06:00 CET</td>
+          <td><Sparkline data={[1, 1, 1, 1, 1, 1, 1]} type="bar" color="#059669" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Design Principles</h2>
+
+    <ol style="width: var(--content-width); padding-left: 1.5rem; margin-bottom: 1.5rem;">
+      <li><strong>Max 5 outputs per agent per cycle</strong> — no overwhelm</li>
+      <li><strong>Research, don't act</strong> — agents suggest, you decide</li>
+      <li><strong>Auto-archive after 3 days</strong> — stale items disappear</li>
+      <li><strong>Evidence-linked</strong> — every suggestion has a source</li>
+    </ol>
+
+    <h2>Stack</h2>
+
+    <div class="card-grid full-width">
+      <Card title="Claude Code + Skills" tags={["orchestration"]}>
+        <p>Central brain. 50+ skills for different tasks. Runs locally.</p>
+      </Card>
+      <Card title="MCP Servers" tags={["integration"]}>
+        <p>Connect to LinkedIn, Telegram, Google, and external APIs.</p>
+      </Card>
+      <Card title="Obsidian Vault" tags={["memory"]}>
+        <p>Shared memory between all agents. Structured notes with frontmatter.</p>
+      </Card>
+      <Card title="Scheduled Routines" tags={["automation"]}>
+        <p>Cron-based agents that run on schedule. Morning dashboard update at 06:00.</p>
+      </Card>
+    </div>
+  </article>
+</Base>

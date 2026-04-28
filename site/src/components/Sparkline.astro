@@ -1,0 +1,46 @@
+---
+interface Props {
+  data: number[];
+  type?: 'bar' | 'line' | 'area';
+  width?: number;
+  height?: number;
+  color?: string;
+  label?: string;
+}
+
+const { data, type = 'bar', width = 80, height = 20, color, label } = Astro.props;
+
+const max = Math.max(...data);
+const min = Math.min(...data);
+const range = max - min || 1;
+
+const barWidth = (width - (data.length - 1) * 1) / data.length;
+
+const points = data.map((v, i) => {
+  const x = (i / (data.length - 1)) * width;
+  const y = height - ((v - min) / range) * height;
+  return `${x},${y}`;
+}).join(' ');
+
+const areaPoints = `0,${height} ${points} ${width},${height}`;
+---
+
+<span class="sparkline" title={label}>
+  <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
+    {type === 'bar' && data.map((v, i) => {
+      const barHeight = ((v - min) / range) * height;
+      const x = i * (barWidth + 1);
+      const y = height - barHeight;
+      return <rect class="sparkline-bar" x={x} y={y} width={barWidth} height={barHeight} style={color ? `fill: ${color}` : ''} />;
+    })}
+    {type === 'area' && (
+      <>
+        <polygon class="sparkline-area" points={areaPoints} style={color ? `fill: ${color}` : ''} />
+        <polyline class="sparkline-line" points={points} style={color ? `stroke: ${color}` : ''} />
+      </>
+    )}
+    {type === 'line' && (
+      <polyline class="sparkline-line" points={points} style={color ? `stroke: ${color}` : ''} />
+    )}
+  </svg>
+</span>
