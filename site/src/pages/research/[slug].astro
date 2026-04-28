@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import { marked } from 'marked';
+
+export function getStaticPaths() {
+  const files = import.meta.glob('../../content/research/*.md', { eager: true, query: '?raw', import: 'default' });
+
+  return Object.entries(files).map(([filepath, raw]) => {
+    const filename = filepath.split('/').pop()?.replace('.md', '') || '';
+    const slug = filename.toLowerCase().replace(/\s+/g, '-');
+
+    const content = raw as string;
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+    const body = fmMatch ? fmMatch[2] : content;
+    const fm: Record<string, string> = {};
+    if (fmMatch) {
+      fmMatch[1].split('\n').forEach(line => {
+        const [key, ...rest] = line.split(':');
+        if (key && rest.length) fm[key.trim()] = rest.join(':').trim();
+      });
+    }
+
+    const titleMatch = body.match(/^#\s+(.+)$/m);
+    const title = titleMatch ? titleMatch[1] : filename;
+
+    return {
+      params: { slug },
+      props: { title, body, tags: fm.tags || '', domain: fm.domain || '' },
+    };
+  });
+}
+
+const { title, body, tags, domain } = Astro.props;
+
+const cleanBody = body
+  .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+  .replace(/\[\[([^\]]+)\]\]/g, '$1');
+
+const html = marked.parse(cleanBody);
+---
+
+<Base title={title}>
+  <article>
+    <div set:html={html} />
+  </article>
+</Base>

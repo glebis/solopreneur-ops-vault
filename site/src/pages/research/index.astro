@@ -1,6 +1,45 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Card from '../../components/Card.astro';
+
+const files = import.meta.glob('../../content/research/*.md', { eager: true, query: '?raw', import: 'default' });
+
+interface ResearchNote {
+  title: string;
+  slug: string;
+  domain: string;
+  tags: string[];
+  description: string;
+}
+
+function parseFm(raw: string) {
+  const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { data: {} as Record<string, string>, content: raw };
+  const data: Record<string, string> = {};
+  match[1].split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    if (key && rest.length) data[key.trim()] = rest.join(':').trim();
+  });
+  return { data, content: match[2] };
+}
+
+const notes: ResearchNote[] = Object.entries(files).map(([filepath, raw]) => {
+  const { data, content } = parseFm(raw as string);
+  const filename = filepath.split('/').pop()?.replace('.md', '') || '';
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  const firstParagraph = content.split('\n').find(l => l.trim() && !l.startsWith('#') && !l.startsWith('>'))?.trim() || '';
+
+  const tagsStr = data.tags || '';
+  const tags = tagsStr.replace(/[\[\]]/g, '').split(',').map(t => t.trim()).filter(Boolean);
+
+  return {
+    title: titleMatch ? titleMatch[1] : filename,
+    slug: filename.toLowerCase().replace(/\s+/g, '-'),
+    domain: data.domain || 'general',
+    tags,
+    description: firstParagraph.slice(0, 150),
+  };
+}).sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 <Base title="Research">
@@ -11,21 +50,11 @@ import Card from '../../components/Card.astro';
     </p>
 
     <div class="card-grid full-width">
-      <Card title="Berlin Solopreneur 2026" status="research" tags={["market", "germany"]} href="/research/berlin-solopreneur">
-        <p>Visa requirements, tax structure, cost of living, legal entities, banking for international clients.</p>
-      </Card>
-
-      <Card title="AI Education Market" status="research" tags={["market", "pricing"]} href="/research/ai-education-market">
-        <p>Global market size, cohort-based course pricing, competitive landscape, distribution channels.</p>
-      </Card>
-
-      <Card title="LinkedIn Strategy" status="research" tags={["sales", "content"]} href="/research/linkedin-strategy">
-        <p>Algorithm insights, content types, lead generation tactics, weekly schedule for solo educators.</p>
-      </Card>
-
-      <Card title="Human-Agent Interaction" status="research" tags={["meta", "ux"]} href="/research/hai-landscape">
-        <p>Frameworks for human-agent collaboration, UX patterns, trust calibration, anti-patterns.</p>
-      </Card>
+      {notes.map(note => (
+        <Card title={note.title} status="research" tags={note.tags.slice(0, 3)} href={`/research/${note.slug}`}>
+          <p>{note.description}</p>
+        </Card>
+      ))}
     </div>
 
     <p style="margin-top: 2rem; font-style: italic; color: var(--color-text-muted);">

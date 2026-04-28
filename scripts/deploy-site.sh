@@ -10,6 +10,10 @@ SITE_DIR="$VAULT_DIR/site"
 echo "=== Syncing tasks to site ==="
 cp "$VAULT_DIR/tasks/"*.md "$SITE_DIR/src/content/tasks/" 2>/dev/null && echo "Tasks synced." || echo "No tasks to sync."
 
+echo "=== Syncing research to site ==="
+cp "$VAULT_DIR/research/"*.md "$SITE_DIR/src/content/research/" 2>/dev/null && echo "Research synced." || echo "No research to sync."
+cp "$VAULT_DIR/meta/hai-landscape.md" "$SITE_DIR/src/content/research/" 2>/dev/null || true
+
 echo "=== Building site ==="
 cd "$SITE_DIR"
 npx astro build
