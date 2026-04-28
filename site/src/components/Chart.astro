@@ -1,0 +1,74 @@
+---
+interface Props {
+  type: 'line' | 'bar' | 'doughnut' | 'radar';
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    color?: string;
+    fill?: boolean;
+  }[];
+  title?: string;
+  width?: number;
+  height?: number;
+}
+
+const { type, labels, datasets, title, width = 600, height = 300 } = Astro.props;
+const chartId = `chart-${Math.random().toString(36).slice(2, 8)}`;
+
+const colors = ['#2563eb', '#059669', '#d97706', '#dc2626', '#7c3aed', '#0891b2'];
+
+const chartConfig = {
+  type,
+  data: {
+    labels,
+    datasets: datasets.map((ds, i) => ({
+      label: ds.label,
+      data: ds.data,
+      borderColor: ds.color || colors[i % colors.length],
+      backgroundColor: type === 'line'
+        ? `${ds.color || colors[i % colors.length]}20`
+        : type === 'doughnut' || type === 'radar'
+          ? colors.map(c => `${c}80`)
+          : `${ds.color || colors[i % colors.length]}80`,
+      fill: ds.fill ?? (type === 'line'),
+      tension: 0.3,
+      borderWidth: 2,
+      pointRadius: 3,
+    })),
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      title: title ? { display: true, text: title, font: { family: "'EB Garamond', Georgia, serif", size: 16, weight: '400' } } : { display: false },
+      legend: { labels: { font: { family: "'EB Garamond', Georgia, serif", size: 12 } } },
+    },
+    scales: type !== 'doughnut' && type !== 'radar' ? {
+      x: { ticks: { font: { family: "'EB Garamond', Georgia, serif", size: 11 } }, grid: { display: false } },
+      y: { ticks: { font: { family: "'EB Garamond', Georgia, serif", size: 11 } }, grid: { color: '#e0e0e0' } },
+    } : undefined,
+  },
+};
+---
+
+<div style={`width: ${width}px; max-width: 100%; margin: 1.5rem 0;`}>
+  <canvas id={chartId} width={width} height={height}></canvas>
+</div>
+
+<script define:vars={{ chartId, chartConfig }}>
+  function initChart() {
+    const ctx = document.getElementById(chartId);
+    if (ctx && window.Chart) {
+      new window.Chart(ctx, chartConfig);
+    }
+  }
+  if (window.Chart) {
+    initChart();
+  } else {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js';
+    script.onload = initChart;
+    document.head.appendChild(script);
+  }
+</script>
