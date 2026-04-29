@@ -1,0 +1,193 @@
+---
+/**
+ * VaultQuery — Dataview-like component for the Astro site.
+ * Reads vault markdown files via import.meta.glob and renders filtered, sorted tables or card grids.
+ */
+
+interface Props {
+  /** Glob pattern for source files */
+  from: string;
+  /** Fields to display as table columns (from frontmatter) */
+  fields?: string[];
+  /** Filter: key=value pairs from frontmatter. Example: { status: "open", source: "agent" } */
+  where?: Record<string, string>;
+  /** Sort by frontmatter field */
+  sortBy?: string;
+  /** Sort direction */
+  sortDir?: 'asc' | 'desc';
+  /** Max items to show */
+  limit?: number;
+  /** Display mode */
+  display?: 'table' | 'cards' | 'list';
+  /** Title for the section */
+  title?: string;
+  /** Group by this frontmatter field */
+  groupBy?: string;
+}
+
+const {
+  from,
+  fields = ['title', 'status', 'stage'],
+  where = {},
+  sortBy = 'created',
+  sortDir = 'desc',
+  limit = 20,
+  display = 'table',
+  title,
+  groupBy,
+} = Astro.props;
+
+const globMap: Record<string, Record<string, unknown>> = {
+  'tasks': import.meta.glob('../../content/tasks/*.md', { eager: true, query: '?raw', import: 'default' }),
+  'research': import.meta.glob('../../content/research/*.md', { eager: true, query: '?raw', import: 'default' }),
+};
+
+const files = globMap[from] || {};
+
+interface VaultItem {
+  title: string;
+  slug: string;
+  [key: string]: string;
+}
+
+function parseFrontmatter(raw: string): { data: Record<string, string>; content: string } {
+  const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { data: {}, content: raw };
+  const data: Record<string, string> = {};
+  match[1].split('\n').forEach(line => {
+    const idx = line.indexOf(':');
+    if (idx > 0) data[line.slice(0, idx).trim()] = line.slice(idx + 1).trim();
+  });
+  return { data, content: match[2] };
+}
+
+let items: VaultItem[] = Object.entries(files).map(([filepath, raw]) => {
+  const { data, content } = parseFrontmatter(raw as string);
+  const filename = filepath.split('/').pop()?.replace('.md', '') || '';
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  return {
+    title: titleMatch ? titleMatch[1] : filename,
+    slug: filename.toLowerCase().replace(/\s+/g, '-'),
+    ...data,
+  };
+});
+
+// Filter
+for (const [key, val] of Object.entries(where)) {
+  items = items.filter(item => item[key] === val);
+}
+
+// Sort
+items.sort((a, b) => {
+  const aVal = a[sortBy] || '';
+  const bVal = b[sortBy] || '';
+  const cmp = aVal.localeCompare(bVal);
+  return sortDir === 'desc' ? -cmp : cmp;
+});
+
+// Limit
+items = items.slice(0, limit);
+
+// Group
+const groups: Record<string, VaultItem[]> = {};
+if (groupBy) {
+  for (const item of items) {
+    const key = item[groupBy] || 'other';
+    (groups[key] ||= []).push(item);
+  }
+} else {
+  groups['all'] = items;
+}
+
+const priorityColors: Record<string, string> = { high: '#dc2626', medium: '#d97706', low: '#059669' };
+const statusIcons: Record<string, string> = { open: '○', done: '●', archived: '◌' };
+const sourceIcons: Record<string, string> = { agent: '🤖', manual: '👤' };
+---
+
+{title && <h3 style="margin-top: 1.5rem;">{title}</h3>}
+
+{Object.entries(groups).map(([groupName, groupItems]) => (
+  <div>
+    {groupBy && groupName !== 'all' && (
+      <h4 style="font-weight: 500; margin-top: 1rem; text-transform: capitalize;">{groupName}</h4>
+    )}
+
+    {display === 'table' && (
+      <table>
+        <thead>
+          <tr>
+            {fields.map(f => <th style="text-transform: capitalize;">{f}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {groupItems.map(item => (
+            <tr>
+              {fields.map(f => (
+                <td>
+                  {f === 'title' ? (
+                    from === 'research'
+                      ? <a href={`/research/${item.slug}`}>{item.title}</a>
+                      : <strong>{item.title}</strong>
+                  ) : f === 'priority' ? (
+                    <span style={`color: ${priorityColors[item[f]] || '#555'}`}>{item[f] || '—'}</span>
+                  ) : f === 'status' ? (
+                    <span>{statusIcons[item[f]] || '○'} {item[f] || '—'}</span>
+                  ) : f === 'source' ? (
+                    <span>{sourceIcons[item[f]] || ''} {item[f] || '—'}</span>
+                  ) : (
+                    item[f] || '—'
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+
+    {display === 'list' && (
+      <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+        {groupItems.map(item => (
+          <li>
+            {statusIcons[item.status] || '○'} <strong>{item.title}</strong>
+            {item.effort && <span style="color: var(--color-text-muted); font-size: 0.85rem;"> ({item.effort})</span>}
+            {item.source === 'agent' && <span style="font-size: 0.8rem;"> 🤖</span>}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {display === 'cards' && (
+      <div class="card-grid full-width">
+        {groupItems.map(item => (
+          <div class="card">
+            <h3>
+              {item.status === 'done' && <span class="status status-active"></span>}
+              {item.status === 'open' && <span class="status status-pending"></span>}
+              {from === 'research'
+                ? <a href={`/research/${item.slug}`}>{item.title}</a>
+                : item.title
+              }
+            </h3>
+            <div style="margin-bottom: 0.3rem;">
+              {item.stage && <span class="tag">{item.stage}</span>}
+              {item.effort && <span class="tag">{item.effort}</span>}
+              {item.source && <span class="tag">{sourceIcons[item.source] || ''} {item.source}</span>}
+              {item.domain && <span class="tag">{item.domain}</span>}
+            </div>
+            {item.priority && (
+              <p style={`font-size: 0.8rem; color: ${priorityColors[item.priority] || '#555'}`}>
+                Priority: {item.priority}
+                {item.due && <> · Due: {item.due}</>}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+))}
+
+{items.length === 0 && (
+  <p style="color: var(--color-text-muted); font-style: italic;">No items match this query.</p>
+)}
