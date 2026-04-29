@@ -6,3 +6,4 @@ site/.vercel/
 .obsidian/workspace.json
 .enzyme*
 .enzyme-embeddings/
+.vercel
