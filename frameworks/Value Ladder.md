@@ -13,17 +13,25 @@ tags: [sales, pricing, business-model]
 ## The Ladder
 
 ```
-┌─────────────────────────────┐
-│ Custom Consulting (€200/hr) │  ← Highest value, lowest volume
-├─────────────────────────────┤
-│ Corporate Training (€2,500) │
-├─────────────────────────────┤
-│ Lab Cohort (€950)           │  ← Core revenue engine
-├─────────────────────────────┤
-│ Community (€49/mo)          │  ← Recurring, relationship-building
-├─────────────────────────────┤
-│ Free Skills + Public Vault  │  ← Lead magnet, SEO, credibility
-└─────────────────────────────┘
+┌──────────────────────────────────────┐
+│ Custom Consulting (€200/hr)          │  ← Highest value
+├──────────────────────────────────────┤
+│ Enterprise per-seat (€1,200/person)  │
+├──────────────────────────────────────┤
+│ Team Program (€5,000-7,500)          │
+├──────────────────────────────────────┤
+│ Corporate Workshop (€2,500/half-day) │  ← Compliance + capability
+├──────────────────────────────────────┤
+│ White-Label Delivery (€1K-1.5K/day)  │  ← Via consultancies
+├──────────────────────────────────────┤
+│ Lab Cohort (€950)                    │  ← Core engine
+├──────────────────────────────────────┤
+│ Community (€49/mo or €399/yr)        │  ← Recurring flywheel
+├──────────────────────────────────────┤
+│ 5-Day Challenge (€29)                │  ← Conversion event
+├──────────────────────────────────────┤
+│ Free Skills + Public Vault           │  ← Lead magnet, SEO
+└──────────────────────────────────────┘
 ```
 
 ## Transition Triggers
