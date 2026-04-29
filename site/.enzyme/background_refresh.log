@@ -1,3 +1,3 @@
-[2m2026-04-29T17:56:19.360525Z[0m [33m WARN[0m [2menzyme_core::llm::client[0m[2m:[0m OPENAI_API_KEY is set but OPENAI_BASE_URL is not — ignoring partial env config
-[2m2026-04-29T17:56:19.500932Z[0m [33m WARN[0m [2menzyme_core::llm::client[0m[2m:[0m Failed to fetch free config from server: Enzyme server returned an error for free config
+[2m2026-04-29T18:01:41.403644Z[0m [33m WARN[0m [2menzyme_core::llm::client[0m[2m:[0m OPENAI_API_KEY is set but OPENAI_BASE_URL is not — ignoring partial env config
+[2m2026-04-29T18:01:41.715839Z[0m [33m WARN[0m [2menzyme_core::llm::client[0m[2m:[0m Failed to fetch free config from server: Enzyme server returned an error for free config
 Error: No API key found. Checked: OPENAI_API_KEY, ~/.enzyme/auth.json, and Enzyme server. Set one of the above or ensure network access for the free tier.
