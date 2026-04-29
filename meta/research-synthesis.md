@@ -191,7 +191,7 @@ Action: Create Triple Credential framework, update Alumni as Marketing Engine wi
 
 | # | Opportunity | Revenue Impact | Effort | Time to First € | Source |
 |---|-------------|---------------|--------|-----------------|--------|
-| 1 | **One corporate deal/quarter at €5K** | +€20K/yr | Medium | 2-3 months | Corporate AI Training |
+| 1 | **One corporate deal/quarter at €10K** | +€40K/yr | Medium | 2-3 months | Corporate AI Training |
 | 2 | **Raise English cohort to €950** | +€3,600/yr (per cohort of 8) | Low | Next cohort | AI Education Market, Competitors |
 | 3 | **Launch community at €49/mo** | +€29,400/yr (at 50 members) | Medium | 1-2 months | Community Pricing |
 | 4 | **EU AI Act compliance workshop (€2,500/half-day)** | +€10K/yr (4 workshops) | Medium | 3-4 months | EU AI Act |

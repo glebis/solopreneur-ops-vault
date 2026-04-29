@@ -18,7 +18,7 @@ tags: [sales, pricing, business-model]
 ├──────────────────────────────────────┤
 │ Enterprise per-seat (€1,200/person)  │
 ├──────────────────────────────────────┤
-│ Team Program (€5,000-7,500)          │
+│ Team Program (€10,000-15,000)        │
 ├──────────────────────────────────────┤
 │ Corporate Workshop (€2,500/half-day) │  ← Compliance + capability
 ├──────────────────────────────────────┤

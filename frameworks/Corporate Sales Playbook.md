@@ -15,13 +15,13 @@ tags: [corporate, b2b, sales, playbook]
 | Tier | Price | Duration | For |
 |------|-------|----------|-----|
 | Half-day workshop | €2,500 | 4 hours | Awareness, intro |
-| Team program | €5,000-7,500 | 2-4 weeks | Skill building |
+| Team program | €10,000-15,000 | 2-4 weeks | Skill building |
 | Enterprise per-seat | €1,200/person | 6 weeks (lab format) | Large teams |
 | White-label delivery | €1,000-1,500/day | Custom | Via consultancies |
 
 ## Revenue Impact
 
-From [[research/Corporate AI Training]]: one deal/quarter at €5K = **€20K/yr** extra.
+From [[research/Corporate AI Training]]: one deal/quarter at €10K = **€40K/yr** extra.
 Combined model reaches **€72-92K/yr** — above the €84K comfort target.
 
 ## 5 Paths to Corporate Deals

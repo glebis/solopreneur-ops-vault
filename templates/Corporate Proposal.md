@@ -44,7 +44,7 @@ By end of program, each participant will have:
 | Option | Duration | Price |
 |--------|----------|-------|
 | Half-day workshop | 4 hours | €2,500 |
-| Team program (3-5 people) | 2-4 weeks | €5,000-7,500 |
+| Team program (3-5 people) | 2-4 weeks | €10,000-15,000 |
 | Full lab (per seat) | 6 weeks | €1,200/person |
 
 ### Next Steps
