@@ -60,6 +60,25 @@ tags: [linkedin, writing, content-strategy, how-to]
 
 **Why it works:** Numbers anchor credibility. One lesson = memorable takeaway.
 
+## Dwell Time — The 2026 Ranking Signal
+
+LinkedIn 360 Brew AI (2026 update) weights **dwell time** as the primary signal — how long a reader spends with your post, not how many liked it. Hooks must now do two jobs: stop the scroll *and* pull the reader into the body.
+
+**Dwell-maximising structure:**
+```
+Hook (2 lines)     — stop scroll, create tension
+Tension (3-4 lines) — widen the gap, add specificity
+Evidence (2-3 lines) — cohort data, real numbers
+Payoff (1-2 lines)  — the lesson, clearly stated
+CTA (optional)      — question or soft invitation
+```
+
+**Mechanics:**
+- No paragraph longer than 3 lines on mobile
+- One-sentence paragraphs slow the reader down (good)
+- White space signals "this is easy to read" → reader continues
+- Measure: comments-per-impression is a better proxy for read rate than likes-per-impression
+
 ## The 80/20 Rule
 
 **80% educational/entertaining, 20% promotional.**

@@ -48,11 +48,13 @@ tags: [linkedin, content-strategy, schedule, how-to]
 
 | Format | Engagement | Best For |
 |--------|-----------|----------|
-| PDF carousels | 6.60% (highest) | Tutorials, frameworks |
-| Talking-head video | High (2.3x with captions) | Demos, stories |
-| Long-form text | Medium-high | Opinions, lessons |
+| PDF carousels | 6.60% (highest) | Tutorials, frameworks — default for Tuesday teaching posts |
+| Talking-head video | 5.60% (+36% YoY growth) | Demos, stories — always add captions (2.3x multiplier) |
+| Long-form text | ~2% | Opinions, lessons |
 | Newsletters | Growing | Deep content |
-| Posts with links | Low (penalized) | Avoid — link in comment |
+| Posts with links | ~60% reach penalty | Never — link always in first comment |
+
+> **2026 algorithm shift (LinkedIn 360 Brew AI):** Dwell time is now the primary ranking signal — how long someone reads, not how many liked. Design every post to extend reading time, not just stop the scroll. Carousels force swipe interactions; video autoplays. Both maximise dwell time natively.
 
 ## Agent Pre-Work
 
