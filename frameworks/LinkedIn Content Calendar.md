@@ -66,10 +66,13 @@ The [[agents/LinkedIn Scout]] prepares:
 ## Rules
 
 1. Never post more than once per day
-2. Links go in first comment, never in post body
+2. **No external links in posts or first comments** (both are penalized as of early 2026). Instead: deep content → LinkedIn Newsletter; demos → native video with caption CTA; frameworks → PDF carousel. Only link when you accept the ~60% reach penalty knowingly.
 3. 80% educational, 20% promotional
 4. Reply to every comment within 24 hours
 5. Save engagement pods for never
+6. **Design for saves, not likes.** Saves drive 5× more reach than likes in LinkedIn 360 Brew AI. At least one post per week should be explicitly saveable: a named framework, checklist, or reference table.
+
+> **Updated May 2026:** Rule 2 was previously "link in first comment" — this workaround is now penalized. Rule 6 added based on new save-signal data.
 
 ## See Also
 
