@@ -96,6 +96,25 @@ Your selling posts should feel like natural extensions of teaching:
 | Thursday | Proof | "I Did X" or Number |
 | Saturday | Conversation | Contrarian or Mistake |
 
+## Hashtag Guidance (2026)
+
+Hashtags are a **topic signal, not a reach driver.** LinkedIn 360 Brew AI uses hashtags to help route content to niche audiences but no longer amplifies reach based on hashtag volume.
+
+**Rule:** Use **0–3 hashtags** per post. More than 3 provides no benefit and may signal low-quality or spammy content.
+
+**When to use:** Only hashtags that tightly match your topic DNA (`#claudecode`, `#aitools`, `#nondeveloper`). Never generic hashtags (`#ai`, `#productivity`, `#tech`).
+
+## Comment Design — The 15× Signal
+
+Comments carry **15× more algorithmic weight than likes** in LinkedIn 360 Brew AI. A post with 8 genuine comments outperforms a post with 120 likes on distribution.
+
+**Implication for CTAs:** Design posts to invite a specific, low-friction response:
+- "What's your approach to X?" (invites short answer)
+- "Which of these have you tried?" (invites one-word or list response)
+- "Drop your biggest challenge with X below" (invitation, not question)
+
+Avoid CTAs that require effort ("write a paragraph about…") or that have no clear answer ("thoughts?").
+
 ## See Also
 
 - [[frameworks/LinkedIn Interest Graph]]

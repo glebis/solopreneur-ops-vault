@@ -71,8 +71,11 @@ The [[agents/LinkedIn Scout]] prepares:
 4. Reply to every comment within 24 hours
 5. Save engagement pods for never
 6. **Design for saves, not likes.** Saves drive 5× more reach than likes in LinkedIn 360 Brew AI. At least one post per week should be explicitly saveable: a named framework, checklist, or reference table.
+7. **Design for comments, not likes.** Comments carry 15× the reach-weight of likes. Every post should have a CTA that invites a short, specific response. Track comments-per-impression as the primary engagement metric.
+8. **Align your profile with your content.** The 360 Brew AI cross-references each post against your headline, About section, and work history. Posts that match your declared expertise get a distribution multiplier. Audit your profile whenever you pivot to a new topic area.
 
 > **Updated May 2026:** Rule 2 was previously "link in first comment" — this workaround is now penalized. Rule 6 added based on new save-signal data.
+> **Updated June 2026:** Rules 7 and 8 added based on confirmed comment-weight (15×) and profile-alignment data from 360 Brew AI research.
 
 ## See Also
 

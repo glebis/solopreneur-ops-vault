@@ -35,6 +35,21 @@ Agents handle the decomposition:
 
 Human role: review, approve, add personal voice where needed.
 
+## Agent Model Routing (2026)
+
+Route tasks to the right model by effort level — not every task needs the most capable model:
+
+| Task Type | Model | Rationale |
+|-----------|-------|-----------|
+| Architecture decisions, complex frameworks | Claude Opus 4.8 | Maximum reasoning quality |
+| Content drafting, analysis, post writing | Claude Sonnet 4.6 | Best quality/cost balance |
+| High-volume, structured, repeatable ops | Claude Haiku 4.5 | Fast, cheap, accurate enough |
+| Research, cited sourcing | Perplexity Pro | Real-time web + citations |
+
+**Budget target:** $50–200/month covers a full solopreneur content stack. Routing tasks to the cheapest capable model keeps costs at the low end of this range.
+
+**Anti-pattern:** Using Opus for every task. Haiku runs daily briefs and metadata generation; Sonnet drafts posts; Opus reviews strategy and builds frameworks.
+
 ## Content Calendar (Minimum Viable)
 
 | Day | Action | Time | Platform |
