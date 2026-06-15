@@ -77,9 +77,30 @@ The [[agents/LinkedIn Scout]] prepares:
 > **Updated May 2026:** Rule 2 was previously "link in first comment" — this workaround is now penalized. Rule 6 added based on new save-signal data.
 > **Updated June 2026:** Rules 7 and 8 added based on confirmed comment-weight (15×) and profile-alignment data from 360 Brew AI research.
 
+## Newsletter Channel (Algorithm Bypass)
+
+LinkedIn newsletters deliver directly to subscriber inboxes, bypassing the feed algorithm entirely. Every subscriber receives a triple notification: email, push alert, and in-app notification. No algorithm decides who sees it.
+
+**Why this matters:**
+- Regular posts reach ~5–7% of followers (algorithm-gated)
+- Newsletters deliver to 100% of subscribers, with **25–35% open rates**
+- Newsletter reach grew ~48% under LinkedIn 360 Brew AI (platform actively promotes the format)
+- Subscribers convert to buyers at 2–3× the rate of regular post readers
+
+**Recommended cadence:** 2x/month. Seed from biweekly review output and best-performing post insights.
+
+**Content fit for this operation:** Long-form AI framework breakdowns, Claude Code Lab round-ups, "what I learned this cohort" dispatches, tool analysis that doesn't belong in a carousel.
+
+**Subscriber-building pattern:** Every carousel CTA → "subscribe for the full breakdown"; bio link → newsletter subscribe; posts that end with "I write more on this in [Newsletter Name]."
+
+**Setup:** LinkedIn Newsletter is created in Creator settings. Name should reflect topic DNA: "Claude Code Lab Dispatch" or "AI for Non-Developers Weekly."
+
+> **Added June 2026:** Newsletter identified as the highest-reach underused channel for AI educators on LinkedIn. Algorithm bypass + direct inbox delivery makes it structurally superior to post-only distribution for an audience that already follows but doesn't always see posts.
+
 ## See Also
 
 - [[frameworks/LinkedIn Interest Graph]]
 - [[frameworks/LinkedIn Hook Patterns]]
 - [[frameworks/Content Leverage]]
+- [[frameworks/Newsletter Authority Channel]]
 - [[research/LinkedIn Strategy|Full LinkedIn Strategy Research]]

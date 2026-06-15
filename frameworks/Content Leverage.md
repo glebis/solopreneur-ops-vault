@@ -17,13 +17,16 @@ tags: [content, strategy, efficiency]
     ├── Recording → YouTube (full)
     ├── Key demo → YouTube Short / Reel (60s)
     ├── 3 insights → 3 LinkedIn posts
+    ├── Best insight (expanded) → LinkedIn Newsletter issue
     ├── Transcript → Blog post
     ├── Q&A highlights → FAQ page
     ├── Participant quote → Testimonial
     └── Skill used → Skill demo video
 ```
 
-**Ratio: 1 input → 7+ outputs**
+**Ratio: 1 input → 8+ outputs**
+
+> **Newsletter note (added June 2026):** LinkedIn Newsletter issues bypass the feed algorithm entirely and deliver to 100% of subscribers via email + push + in-app. One newsletter issue = more guaranteed reach than 5–7 standard posts to the same audience. See [[frameworks/Newsletter Authority Channel]].
 
 ## Agent Role
 
@@ -60,7 +63,7 @@ Route tasks to the right model by effort level — not every task needs the most
 | Thu | Record 1 skill demo | 15 min | YouTube |
 | Fri | Share demo + engage comments | 10 min | LinkedIn |
 | Sat | Lab practice (natural content) | 60 min | Zoom |
-| Sun | Rest / review agent weekly report | 5 min | Dashboard |
+| Sun | Rest / review report + draft newsletter (2x/month) | 15 min | Dashboard / LinkedIn |
 
 **Total active content work: ~3.5 hours/week**
 
@@ -68,3 +71,5 @@ Route tasks to the right model by effort level — not every task needs the most
 
 - [[MOC/Content Engine]]
 - [[frameworks/Infinite Sales Cycle]]
+- [[frameworks/Newsletter Authority Channel]]
+- [[frameworks/Agent Delegation Readiness]]
