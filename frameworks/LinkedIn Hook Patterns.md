@@ -60,6 +60,28 @@ tags: [linkedin, writing, content-strategy, how-to]
 
 **Why it works:** Numbers anchor credibility. One lesson = memorable takeaway.
 
+## Pattern 6: The System Demo
+
+**Template:** "Here's my [specific system] that [runs/works without me]. [One concrete detail that proves it's real]."
+
+**Example:**
+> Here's the vault that runs my content business while I sleep.
+> Every line in this screenshot was written by an agent. Here's the architecture.
+
+**Why it works:** The "Claudepilling" format gaining traction in 2026 — showing operational AI systems, not describing them. Specificity (real file names, actual outputs, working demos) is hard to fake, which is why the algorithm treats it as an authenticity signal. "Show the system" content generates saves and shares because practitioners want to replicate it, not just learn from it.
+
+**Dwell time mechanics:** A real system demo forces the reader to slow down to understand the architecture. Screenshots, file names, and commit logs are dense visual information. Dwell time is long by default.
+
+**When to use:** When you have a working system that produces visible output (a vault, a content stack, an agent workflow, an automation). Requires actually having the system — this pattern cannot be faked with generic descriptions.
+
+**Structural variant for this operation:**
+> My biweekly content review generates itself.
+> Here's what the output looks like (screenshot).
+> Here's the 50-line skill that drives it.
+> Here's why this matters for your own content system.
+
+---
+
 ## Dwell Time — The 2026 Ranking Signal
 
 LinkedIn 360 Brew AI (2026 update) weights **dwell time** as the primary signal — how long a reader spends with your post, not how many liked it. Hooks must now do two jobs: stop the scroll *and* pull the reader into the body.
