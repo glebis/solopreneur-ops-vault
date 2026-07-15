@@ -60,6 +60,16 @@ tags: [linkedin, writing, content-strategy, how-to]
 
 **Why it works:** Numbers anchor credibility. One lesson = memorable takeaway.
 
+## Topic Authority — The Distribution Multiplier
+
+LinkedIn 360Brew builds an interest graph around your topic DNA over time. Consistent narrow posting routes each new post to an established audience of topic-interested people outside your network. Topic drift resets the graph.
+
+**Rule:** Every post should touch your core topic cluster (Claude Code + non-developer practitioners + solopreneur workflows). A trending post outside your DNA earns one impression spike at the cost of compounding distribution.
+
+**Interest graph timeline:** ~20 posts to establish, ~50 posts to build, ~100+ to reach "topic authority" where new posts go out-of-network by default.
+
+See [[frameworks/Topic DNA Cultivation]] for the full framework.
+
 ## Dwell Time — The 2026 Ranking Signal
 
 LinkedIn 360 Brew AI (2026 update) weights **dwell time** as the primary signal — how long a reader spends with your post, not how many liked it. Hooks must now do two jobs: stop the scroll *and* pull the reader into the body.
@@ -120,4 +130,5 @@ Avoid CTAs that require effort ("write a paragraph about…") or that have no cl
 - [[frameworks/LinkedIn Interest Graph]]
 - [[frameworks/LinkedIn Content Calendar]]
 - [[frameworks/Content Leverage]]
+- [[frameworks/Topic DNA Cultivation]]
 - [[research/LinkedIn Strategy|Full LinkedIn Strategy Research]]

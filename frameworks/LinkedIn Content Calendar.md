@@ -49,7 +49,7 @@ tags: [linkedin, content-strategy, schedule, how-to]
 | Format | Engagement | Best For |
 |--------|-----------|----------|
 | PDF carousels | 6.60% (highest) | Tutorials, frameworks — default for Tuesday teaching posts |
-| Talking-head video | 5.60% (+36% YoY growth) | Demos, stories — always add captions (2.3x multiplier) |
+| Talking-head video | 5.60% (+36% YoY growth) | Demos, stories — keep under 90 seconds for full dwell-time credit; always add captions (2.3x multiplier) |
 | Long-form text | ~2% | Opinions, lessons |
 | Newsletters | Growing | Deep content |
 | Posts with links | ~60% reach penalty | Never — link always in first comment |
@@ -103,4 +103,5 @@ LinkedIn newsletters deliver directly to subscriber inboxes, bypassing the feed 
 - [[frameworks/LinkedIn Hook Patterns]]
 - [[frameworks/Content Leverage]]
 - [[frameworks/Newsletter Authority Channel]]
+- [[frameworks/Topic DNA Cultivation]]
 - [[research/LinkedIn Strategy|Full LinkedIn Strategy Research]]
