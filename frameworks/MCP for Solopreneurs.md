@@ -74,13 +74,35 @@ For solopreneur-specific needs, build simple MCP servers:
 
 Use the `mcp-builder` skill for guided creation.
 
+## MCP 2026-07-28 Spec Update — Stateless Core
+
+The final MCP specification released July 28, 2026 is the protocol's largest change since launch. Key changes for solopreneurs:
+
+**What changed:**
+- **Session IDs removed.** The `initialize` handshake and `Mcp-Session-Id` header are gone from the core spec. Any server instance can handle any request behind a standard load balancer. No sticky sessions needed.
+- **Stateless mental model.** You send a request, any server instance handles it, you get a reply. This is cloud-native intuition most practitioners already have from working with APIs.
+- **Auth upgraded.** Authentication now aligns with OAuth 2.0 / OIDC rather than the previous session-layer approach. Cleaner standard, but requires updating servers that relied on the old auth pattern.
+- **MCP Apps and Tasks** are now first-class protocol extensions with their own lifecycle.
+
+**What this means for practitioners:**
+| Situation | Impact |
+|-----------|--------|
+| Tool-use servers with no session state | Largely compatible — verify no `session_id` references |
+| Servers using custom session middleware | Requires migration |
+| Auth that relied on session layer | Update to OAuth/OIDC |
+| GitHub MCP Server users | Already updated (July 23) |
+
+**Teaching impact:** Session state was the hardest concept to explain to non-developers because failures were invisible. Stateless request-response is universally understood: you send a message, you get a reply, it worked or it didn't. MCP is now easier to teach.
+
+> Updated August 2026 based on MCP 2026-07-28 final specification.
+
 ## Ecosystem Scale
 
-As of April 2026:
+As of August 2026:
 - 10,000+ community MCP servers
-- 97M monthly SDK downloads
+- 97M+ monthly SDK downloads
 - Donated to Linux Foundation (open governance)
-- Supported by Claude, VS Code, Cursor, Zed, and more
+- Supported by Claude, VS Code, Cursor, Zed, Windsurf, and more
 
 ## See Also
 

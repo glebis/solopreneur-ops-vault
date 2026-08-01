@@ -87,7 +87,9 @@ LinkedIn newsletters deliver directly to subscriber inboxes, bypassing the feed 
 - Newsletter reach grew ~48% under LinkedIn 360 Brew AI (platform actively promotes the format)
 - Subscribers convert to buyers at 2–3× the rate of regular post readers
 
-**Recommended cadence:** 2x/month. Seed from biweekly review output and best-performing post insights.
+**Recommended cadence:** 2x/month for established newsletters (500+ subscribers). During the **launch and growth phase (0–500 subscribers)**, weekly cadence outperforms biweekly — subscribers received weekly content stay engaged and attract organic word-of-mouth. Switch to biweekly once the list is established.
+
+> **Updated August 2026:** Weekly cadence added for launch phase based on LinkedIn newsletter growth research showing weekly outperforms biweekly for subscriber acquisition in months 1–3.
 
 **Content fit for this operation:** Long-form AI framework breakdowns, Claude Code Lab round-ups, "what I learned this cohort" dispatches, tool analysis that doesn't belong in a carousel.
 
