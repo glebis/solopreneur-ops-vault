@@ -48,7 +48,7 @@ tags: [linkedin, content-strategy, schedule, how-to]
 
 | Format | Engagement | Best For |
 |--------|-----------|----------|
-| PDF carousels | 6.60% (highest) | Tutorials, frameworks — default for Tuesday teaching posts |
+| PDF carousels | 6.60% (highest) | Tutorials, frameworks — default for Tuesday teaching posts. **Keep to 8–10 slides max** — LinkedIn penalises low completion rates, and readers drop off after slide 10. |
 | Talking-head video | 5.60% (+36% YoY growth) | Demos, stories — keep under 90 seconds for full dwell-time credit; always add captions (2.3x multiplier) |
 | Long-form text | ~2% | Opinions, lessons |
 | Newsletters | Growing | Deep content |
@@ -90,6 +90,7 @@ LinkedIn newsletters deliver directly to subscriber inboxes, bypassing the feed 
 **Recommended cadence:** 2x/month for established newsletters (500+ subscribers). During the **launch and growth phase (0–500 subscribers)**, weekly cadence outperforms biweekly — subscribers received weekly content stay engaged and attract organic word-of-mouth. Switch to biweekly once the list is established.
 
 > **Updated August 2026:** Weekly cadence added for launch phase based on LinkedIn newsletter growth research showing weekly outperforms biweekly for subscriber acquisition in months 1–3.
+> **Updated October 2026:** Carousel slide count cap (8–10 slides) added based on October 2026 data showing completion rate as a ranking signal. Carousels above 10 slides lose readers and are penalised by distribution algorithm.
 
 **Content fit for this operation:** Long-form AI framework breakdowns, Claude Code Lab round-ups, "what I learned this cohort" dispatches, tool analysis that doesn't belong in a carousel.
 
