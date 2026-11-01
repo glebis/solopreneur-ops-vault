@@ -125,10 +125,28 @@ Comments carry **15× more algorithmic weight than likes** in LinkedIn 360 Brew 
 
 Avoid CTAs that require effort ("write a paragraph about…") or that have no clear answer ("thoughts?").
 
+## The First 90 Minutes — The Launch Window
+
+LinkedIn's distribution algorithm makes a binary decision within the first **60–90 minutes** of a post going live: push it wider, or keep it narrow. Optimising the post structure matters; optimising the launch ritual compounds it.
+
+**The ritual:**
+1. Post only at a time when you can be online for 90 minutes after publishing
+2. In the 15 minutes *before* posting: reply to 2–3 relevant posts — this surfaces your profile to recent engagers
+3. Within 5 minutes of publishing: add a first comment of your own (a structural addition — extends the post, asks a specific question, not "what do you think?")
+4. Reply to every early comment within 15 minutes
+5. Optionally: DM 2–3 people who would genuinely value the post — not to ask for likes, just to share
+
+**Why it matters:** Most creators optimise the *post*; few optimise the *launch*. The 90-minute window means you need a consistent ritual, not a one-time tweak. Build it into your schedule as a fixed block, same time each post day — maps to the Behavioral Activation scheduled activation principle.
+
+> **Added November 2026:** First 90-minute window confirmed across multiple independent 2026 sources as the decisive distribution gate.
+
+See [[frameworks/First 90 Minutes Method]] for the full framework.
+
 ## See Also
 
 - [[frameworks/LinkedIn Interest Graph]]
 - [[frameworks/LinkedIn Content Calendar]]
 - [[frameworks/Content Leverage]]
 - [[frameworks/Topic DNA Cultivation]]
+- [[frameworks/First 90 Minutes Method]]
 - [[research/LinkedIn Strategy|Full LinkedIn Strategy Research]]
